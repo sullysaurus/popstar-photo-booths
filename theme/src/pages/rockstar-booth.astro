@@ -1,70 +1,169 @@
 ---
-import { Icon } from 'astro-icon';
-import { Container, Button, YouTubeEmbedSection } from '@littlesticks/odyssey-theme-components';
+import {Icon} from 'astro-icon'
+import {
+  AnnouncementBar,
+  Button,
+  StickyTextImageSection,
+  CtaCardSection,
+  Container
+} from '@littlesticks/odyssey-theme-components';
+import PhotoGridSection from '../../components/sections/PhotoGridSection.astro'
+import Layout from '../layouts/Page.astro';
 
+const seo = {
+	title: 'Popstar Photo Booths | Rockstar Photo Booth Rental in Raleigh, NC',
+	description: 'Photo booth rental in Raleigh',
+};
 ---
 
-<Container>
-	<section class="hero-section__section">
-		<div class="hero-section__text">
-			<h1>Popstar Photo Booths</h1>
-				<p>
-				Photo booth rentals in Raleigh starting at $300.
-				</p>
-			<div class="hero-btns__container">
-				<Button href="/contact" customIcon>Check Availability
-				<Fragment slot="icon">
-				<Icon name="ic:baseline-chevron-right"/>
-				</Fragment>
-				</Button>
-			</div>
-		</div>
-		<div>
-		  <YouTubeEmbedSection url="https://youtu.be/BUV3W2n-S1Q?si=2IKGlVHq6JNv6-8u" rounded />
-		</div>
-	</section>
-</Container>
+<!-- <AnnouncementBar text="Did you love working with us? Leave a Google review and support a small business!" href="https://g.page/r/CczYNMDcHxyIEBM/review" slot="announcement-bar"/> -->
+<Layout seo={seo} >
+  <div class="rockstar">
+  <StickyTextImageSection>
+    <div slot="text-container">
+      <h2>The Rockstar Booth</h2>
+      <h3>Features</h3>
+      <p>
+        <ul>
+		  <li>Professional quality lighting</li>
+		  <li>Unlimited professional photos</li>
+          <li>Glam Mode option</li>
+          <li>Unlimited prints</li>
+		  <li>Photos, videos, gifs, boomerangs</li>
+          <li>Instagram style filters</li>
+          <li>Text, email, air drop and QR code sharing</li>
+          <li>Real time live gallery of all your event photos</li>
+		  <li>Custom photo templates</li>
+		  <li>Custom tap to start screen</li>
+      </ul>
+      </p>
+      <h3>Pefect For</h3>
+      <p>
+        <ul>
+		     <li>Upscale Weddings</li>
+		     <li>Red Carpet Events</li>
+          <li>High Budget Parties</li>
+      </ul>
+      </p>
+      <Button href="/contact" slot="column-1-cta">Check Availability</Button>
+      
+    </div>
+     <picture slot="image-container">
+      <img
+        src="/assets/images/rockstar-booth.jpg"
+        alt="Popstar Photo Booths"
+        loading="lazy"
+      />
+    </picture>
+  </StickyTextImageSection>
+  <div class="gallery mg">
+    <h3 class="centered">Gallery</h3>
+    <PhotoGridSection>
+      <div slot="column-1-body">
+        <img src="/assets/images/rock-1.jpeg" alt="Form" />
+      </div>
+      <div slot="column-2-body">
+        <img src="/assets/images/rock-2.jpeg" alt="Select Date" />
+      </div>
+      <div slot="column-3-body">
+        <img src="/assets/images/rock-3.jpeg" alt="Add Ons" />
+      </div>
+    </PhotoGridSection>
+    <PhotoGridSection>
+      <div slot="column-1-body">
+        <img src="/assets/images/rock-4.jpeg" alt="Back Drops" />
+      </div>
+      <div slot="column-2-body">
+        <img src="/assets/images/rock-5.jpeg" alt="Venue" />
+          </div>
+      <div slot="column-3-body">
+        <img src="/assets/images/rock-6.jpeg" alt="Review" />
+      </div>
+    </PhotoGridSection>
+    <PhotoGridSection>
+      <div slot="column-1-body">
+        <img src="/assets/images/rock-7.jpeg" alt="Back Drops" />
+      </div>
+      <div slot="column-2-body">
+        <img src="/assets/images/rock-8.jpeg" alt="Venue" />
+          </div>
+      <div slot="column-3-body">
+        <img src="/assets/images/rock-9.jpeg" alt="Review" />
+      </div>
+    </PhotoGridSection>
+    </div>
+  </div>
+  <CtaCardSection>
+  <h2>Ready to get started?</h2>
+  <p>Let's do it!</p>
+  <Button href="/contact" customIcon>
+    Check Availability
+    <Fragment slot="icon">
+      <Icon name="ic:baseline-chevron-right" />
+    </Fragment>
+  </Button>
+</CtaCardSection>
+</Layout>
 
 <style>
-.hero-section__section {
-	margin: var(--section-margin) auto;
-	min-height: clamp(90vh, 100vw, calc(100vh - var(--navbar-height)));
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	gap: 1rem;
-}
-.hero-section__text {
-	justify-self: center;
-	max-width: 25rem;
-}
-.hero-btns__container {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-}
-.hero-btns__container {
-	margin-right: 1rem;
-}
-.hero-section__image {
-	display: flex;
-}
-.hero-section__image img {
-	width: 100%;
-	height: 100%;
-	max-height: 80vh;
-	object-fit: cover;
-	border-radius: var(--theme-shape-radius);
+
+.trusted-by-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px; 
 }
 
-.hero-section__text img {
-  max-width: 75%;
-  margin-top: 1rem;
+.trusted-logo {
+  max-width: 100px; /* Adjust the size as needed */
+  margin: 0 10px; /* Provides horizontal spacing */
 }
 
-@media (max-width: 768px) {
-	.hero-section__section {
-		grid-template-columns: 1fr;
-	}
+
+.partners {
+  margin: calc(var(--section-margin) * 2) auto;
+  padding: 3rem;
+  background-color: var(--theme-surface-1);
+  text-align: center;
+}
+
+.centered {
+  text-align: center;
+}
+
+.partners img {
+  border-radius: var(--theme-shape-radius);
+}
+
+.gallery img {
+  border-radius: var(--theme-shape-radius);
+}
+
+/* .rockstar img {
+  border-radius: var(--theme-shape-radius);
+} */
+
+.backdrops {
+  margin-top: 2rem;
+}
+
+.mg {
+  margin-top: 2rem;
+}
+
+/* .google-review-section{
+  margin-top: 2rem;
+} */
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .trusted-by-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trusted-logo {
+    max-width: 100px; /* Smaller size for mobile */
+    margin: 10px 0; /* Adjust margin for vertical layout */
+  }
 }
 </style>
