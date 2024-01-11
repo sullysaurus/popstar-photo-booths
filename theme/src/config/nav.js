@@ -4,14 +4,6 @@ export const nav = [
 		slug: '/',
 	},
 	{
-		title: 'Popstar Booth',
-		slug: '/popstar-booth',
-	},
-	{
-		title: 'Rockstar Booth',
-		slug: '/rockstar-booth',
-	},
-	{
 		title: 'About',
 		slug: '/about',
 	},
