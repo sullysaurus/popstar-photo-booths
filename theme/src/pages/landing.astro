@@ -1,90 +1,126 @@
 ---
-import Layout from '../layouts/Base.astro';
-import LandingContactForm from '../components/forms/LandingContactForm.astro';
-import Logo from '../components/Logo.astro';
+import {Icon} from 'astro-icon'
+import {
+  AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+  StickyTextImageSection,
+  CtaCardSection
+} from '@littlesticks/odyssey-theme-components';
+import Layout from '../layouts/Page.astro';
+import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
 
 const seo = {
-	title: 'Landing Page #2 | Astro Odyssey Theme',
-	description: 'Landing Page #2 | Astro Odyssey Theme',
+	title: 'Landing Page #1 | Astro Odyssey Theme',
+	description: 'Landing Page #1 | Astro Odyssey Theme',
 };
 ---
 
-<Layout seo={seo}>
-  <div class="full-page-split__wrapper">
-    <section class="full-page-split__image-section">
-      <div class="full-page-split__logo">
-        <a href="/">
-          Popstar Photo Booths
-        </a>
-      </div>
-      <picture>
-        <img
-          src="/assets/images/home/image5.jpg"
-          alt="Astro Odyssey"
-          class="full-page-split__image"
-        />
-      </picture>
-    </section>
-    <section class="full-page-split__content-section">
-      <div class="full-page-split__content-container">  
-        <h1>See Packages</h1>
-        <p>Fill out the form below to check your date.</p>
-        <LandingContactForm/>
-      </div>
-    </section>
-  </div>
-</Layout>
+<AnnouncementBar text="Read Our Latest Blog Post" href="/blog/posts/remote-work-mental-health/" slot="announcement-bar"/>
+<Layout seo={seo} >
+	<TextAndImageHero reversed>
+		<div slot="text-container">
+			<h1>Don't Reinvent the Wheel</h1>
+			<p>Use Odyssey Theme to jumpstart your company's marketing website.</p>
+		</div>
+		<div slot="btns-container">
+			<Button href="/theme/get-started" customIcon
+				>Get Started <Fragment slot="icon">
+          <Icon name="ic:baseline-chevron-right"/>
+        </Fragment></Button
+			>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/landing-1/landing-hero-1.jpg"
+				alt="Astro Odyssee"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
 
-<style>
-.full-page-split__wrapper {
-  display: grid;
-  grid-template-columns: 6fr 4fr;
-  grid-auto-columns: 1fr;
-  min-height: 100vh;
-}
-.full-page-split__image-section {
-  position: relative;
-}
-.full-page-split__image-section :global(img) {
- width: 100%;
-  height: 100vh;
-  object-fit: cover;
-}
-.full-page-split__logo {
-  background-color: var(--theme-surface-1);
-  color: (--theme-on-surface-1);
-  padding: 0.5rem 1rem;
-  border-radius: var(--theme-shape-radius);
-  top: 1rem;
-  left: 1rem;
-  position: absolute;
-  z-index: 1;
-}
-.full-page-split__logo a {
-  text-decoration: none;
-}
-.full-page-split__content-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.full-page-split__content-container {
-  margin: 1rem;
-  padding: 2rem;
-  background-color: var(--theme-surface-1);
-  color: var(--theme-on-surface-1);
-  border-radius: var(--theme-shape-radius);
-}
-.full-page-split__content-container h1 {
-  font-size: var(--font-size-xl);
-}
-@media(max-width: 768px) {
-  .full-page-split__wrapper {
-    grid-template-columns: 1fr;
-    grid-template-rows: 30vh auto;
-  }
-  .full-page-split__image-section :global(img) {
-    max-height: 30vh;
-  }
-}
-</style>
+	<CustomerQuoteSection
+		quoteText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, vero nobis? Voluptas assumenda, voluptatibus commodi qui ducimus delectus praesentium maiores, impedit iure labore ratione, ea facilis numquam doloremque aperiam aspernatur."
+		customerName="Happy Customer"
+	/>
+
+	<ThreeColumnTextSection>
+		<div slot="column-1-body">
+			<h2>Why?</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+				mollitia cumque. Velit.
+			</p>
+		</div>
+		<Button slot="column-1-cta">Learn More</Button>
+		<div slot="column-2-body">
+			<h2>How?</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+				mollitia cumque. Velit.
+			</p>
+		</div>
+		<Button slot="column-2-cta" outlined>Learn More</Button>
+		<div slot="column-3-body">
+			<h2>What?</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+				mollitia cumque. Velit.
+			</p>
+		</div>
+		<Button slot="column-3-cta">Learn More</Button>
+	</ThreeColumnTextSection>
+
+	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded />
+
+  <StickyTextImageSection>
+    <div slot="text-container">
+      <h2>Features</h2>
+      <h3>SEO</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+        tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+        consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+        mollitia cumque. Velit.
+      </p>
+      <h3>Responsive</h3>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+        tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+        consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+        mollitia cumque. Velit.
+      </p>
+      <h3>Themeable</h3>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+        tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+        consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+        mollitia cumque. Velit.
+      </p>
+    </div>
+     <picture slot="image-container">
+      <img
+        src="/assets/images/landing-1/landing-sticky.jpg"
+        alt="Astro Odyssey"
+        loading="lazy"
+      />
+    </picture>
+  </StickyTextImageSection>
+
+  <CtaCardSection background="var(--theme-surface-2)" color="var(--theme-on-surface-2)">
+    <h2>Start Your Website Today</h2>
+    <p>It only takes a couple clicks to have a new, modern website for your business or startup.</p>
+    <Button href="/theme/get-started" customIcon>Get Started <Fragment slot="icon">
+      <Icon name="ic:baseline-chevron-right"/>
+    </Fragment></Button>
+  </CtaCardSection>
+
+</Layout>
