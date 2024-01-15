@@ -12,7 +12,7 @@ import Layout from '../layouts/Page.astro';
 import CustomerQuoteSection from '../../components/sections/CustomerQuoteSection.astro';
 import HeroSection from '../components/sections/heros/HeroSection.astro';
 import FourColumnSection from '../../components/sections/FourColumnSection.astro';
-
+import YouTubeEmbedSection from '../../components/sections/YouTubeEmbedSection.astro';
 const seo = {
 	title: 'Popstar Photo Booths | Photo Booth Rental in Raleigh, NC',
 	description: 'Photo booth rental in Raleigh',
@@ -36,15 +36,9 @@ const seo = {
           </Button>
         </div>
       </div>
-      <div class="hero-section__image">
-        <picture>
-          <img
-            src="/assets/images/header.jpg"
-            alt="Astro Odyssey"
-            id="home-hero-image"
-          />
-        </picture>
-    </div>
+      <div>
+        <YouTubeEmbedSection url="https://youtu.be/BUV3W2n-S1Q?si=2IKGlVHq6JNv6-8u" />
+      </div>
     </section>
   </Container>
 	<CustomerQuoteSection
@@ -69,7 +63,7 @@ const seo = {
     <div class="hero-section__image">
       <picture>
         <img
-          src="/assets/images/girls-group.jpg"
+          src="/assets/images/header.jpg"
           alt="Astro Odyssey"
           id="home-hero-image"
         />
@@ -96,11 +90,13 @@ const seo = {
       <div class="hero-section__text">
         <h1>How To Book</h1>
         <p>
-         1. Check your date <a href="/contact">here</a><br>
-         2. Secure your date with a $99 deposit.<br>
-         3. Finalize details.<br>
-         4. Any questions call <a href="tel:9192787226">919-278-7226</a>.
+         1. Send date inquiry <a href="/contact">here</a>.<br>
+         2. Check your email for booking link.<br>
+         3. Secure your date with a $99 deposit.<br>
+         4. Finalize package details.<br>
+         5. Have a super fun event.<br>
         </p>
+      <h4>Any questions call <a href="tel:9192787226">919-278-7226</a>.</h4>
       </div>
       <div class="hero-section__image">
         <picture>
