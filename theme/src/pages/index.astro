@@ -9,9 +9,9 @@ import {
 } from '@littlesticks/odyssey-theme-components';
 import PhotoGridSection from '../../components/sections/PhotoGridSection.astro'
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
 import CustomerQuoteSection from '../../components/sections/CustomerQuoteSection.astro';
 import HeroSection from '../components/sections/heros/HeroSection.astro';
+import FourColumnSection from '../../components/sections/FourColumnSection.astro';
 
 const seo = {
 	title: 'Popstar Photo Booths | Photo Booth Rental in Raleigh, NC',
@@ -147,28 +147,20 @@ const seo = {
   </div>
   <div class="backdrops mg">
     <h3 class="centered">Backdrops</h3>
-    <PhotoGridSection>
+    <FourColumnSection>
       <div slot="column-1-body">
-        <img src="/assets/images/bd-1.jpeg" alt="Backdrop" />
+        <img src="/assets/images/bd-2.jpeg" alt="Backdrop" />
       </div>
       <div slot="column-2-body">
-        <img src="/assets/images/bd-2.jpeg" alt="Backdrop" />
+        <img src="/assets/images/bd-6.jpeg" alt="Backdrop" />
       </div>
       <div slot="column-3-body">
         <img src="/assets/images/bd-3.jpeg" alt="Backdrop" />
       </div>
-    </PhotoGridSection>
-    <PhotoGridSection>
-      <div slot="column-1-body">
+      <div slot="column-4-body">
         <img src="/assets/images/bd-4.jpeg" alt="Backdrop" />
       </div>
-      <div slot="column-2-body">
-        <img src="/assets/images/bd-5.jpeg" alt="Backdrop" />
-      </div>
-      <div slot="column-3-body">
-        <img src="/assets/images/bd-6.jpeg" alt="Backdrop" />
-      </div>
-    </PhotoGridSection>
+    </FourColumnSection>
   </div>
   <CustomerQuoteSection
   quoteText="Great service, and experience! Thank you Danny!"
